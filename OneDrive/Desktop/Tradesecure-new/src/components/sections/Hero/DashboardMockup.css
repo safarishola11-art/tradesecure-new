@@ -3,7 +3,10 @@
   width: 100%;
   max-width: 1140px;
   margin: 2.5rem auto 0;
+  margin-bottom: 0;
   perspective: 1200px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
 }
 
 .dashboard-window {
@@ -703,6 +706,12 @@
   .mockup-content {
     padding: 12px !important;
     overflow-x: hidden;
+  }
+
+  /* Fade only the very bottom edge on small screens so content stays readable */
+  .dashboard-mockup-wrapper {
+    -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
   }
 
   /* Stack the dashboard header elements */
