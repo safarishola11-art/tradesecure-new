@@ -695,8 +695,14 @@
 /* Mobile Optimization for Dashboard Mockup */
 @media (max-width: 768px) {
   .dashboard-window {
-    padding: 14px;
+    padding: 12px !important;
     border-radius: 16px;
+  }
+
+  /* Keep dashboard content inside the phone viewport boundaries */
+  .mockup-content {
+    padding: 12px !important;
+    overflow-x: hidden;
   }
 
   /* Stack the dashboard header elements */
@@ -745,7 +751,7 @@
   .mockup-table-panel {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -754,6 +760,33 @@
   .mockup-stats-grid,
   .mockup-lower-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Trade Progress Overview card & all inner boxes */
+  .mockup-progress-panel,
+  .mockup-progress-panel .panel-header,
+  .mockup-progress-panel .progress-timeline-wrapper,
+  .mockup-progress-panel .progress-timeline-bar,
+  .mockup-progress-panel .timeline-nodes,
+  .mockup-progress-panel .timeline-node {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+
+  /* Inner status boxes wrap instead of clipping / overflowing */
+  .mockup-floating-callout,
+  .mockup-transit-card,
+  .pending-action-item,
+  .transit-route,
+  .transit-cargo {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 }
 
