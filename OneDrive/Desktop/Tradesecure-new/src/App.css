@@ -1,0 +1,10 @@
+.tradesecure-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral-bg);
+}
+
+main {
+  flex: 1;
+}

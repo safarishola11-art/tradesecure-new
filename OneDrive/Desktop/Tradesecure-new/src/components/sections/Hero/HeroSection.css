@@ -1,0 +1,98 @@
+.hero-section {
+  position: relative;
+  background-color: var(--color-dark-bg);
+  background-image: radial-gradient(ellipse 85% 65% at 50% 18%, #094734 0%, #04261B 65%, #021A12 100%);
+  padding: 5rem 0 6rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Background Watermark Pattern */
+.hero-pattern-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Typography */
+.hero-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(2.35rem, 4.6vw, 3.85rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 660px;
+  margin: 1.35rem auto 2.35rem;
+}
+
+/* Hero CTAs */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  padding: 0.85rem 1.95rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn-primary:hover {
+  background: #F4FAF7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero-btn-secondary {
+  padding: 0.85rem 1.95rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+}
