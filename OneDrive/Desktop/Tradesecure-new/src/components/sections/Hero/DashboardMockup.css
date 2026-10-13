@@ -734,6 +734,27 @@
     align-items: center;
     gap: 6px;
   }
+
+  /* Full-width cards, no fixed horizontal margins */
+  .dashboard-mockup-wrapper,
+  .dashboard-window,
+  .mockup-stat-card,
+  .mockup-progress-panel,
+  .mockup-transit-card,
+  .mockup-actions-panel,
+  .mockup-table-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Stack internal card grids into a single column */
+  .mockup-stats-grid,
+  .mockup-lower-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
