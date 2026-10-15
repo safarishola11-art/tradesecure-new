@@ -5,8 +5,19 @@
   margin: 2.5rem auto 0;
   margin-bottom: 0;
   perspective: 1200px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+  overflow: visible !important;
+}
+
+.dashboard-mockup-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  pointer-events: none;
+  z-index: 20;
 }
 
 .dashboard-window {
@@ -708,10 +719,9 @@
     overflow-x: hidden;
   }
 
-  /* Fade only the very bottom edge on small screens so content stays readable */
-  .dashboard-mockup-wrapper {
-    -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
+  /* Fade overlay for small screens */
+  .dashboard-mockup-wrapper::after {
+    height: 80px;
   }
 
   /* Stack the dashboard header elements */
