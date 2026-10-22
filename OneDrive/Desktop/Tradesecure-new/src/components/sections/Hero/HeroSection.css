@@ -2,9 +2,22 @@
   position: relative;
   background-color: var(--color-dark-bg);
   background-image: radial-gradient(ellipse 85% 65% at 50% 18%, #094734 0%, #04261B 65%, #021A12 100%);
-  padding: 5rem 0 6rem;
-  overflow: hidden;
+  padding: 5rem 0 14rem; /* extra bottom space for negative-margin mockup overlap */
+  overflow: visible; /* allow mockup to bleed out */
   text-align: center;
+}
+
+/* Smooth gradient fade into the next section */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(6, 30, 20, 0.8) 60%, #061e14 100%);
+  z-index: 3;
+  pointer-events: none;
 }
 
 /* Background Watermark Pattern */

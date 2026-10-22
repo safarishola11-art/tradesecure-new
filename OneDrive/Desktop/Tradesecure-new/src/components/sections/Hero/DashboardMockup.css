@@ -1,11 +1,17 @@
 .dashboard-mockup-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 1140px;
-  margin: 2.5rem auto 0;
-  margin-bottom: 0;
+  width: 90%;
+  max-width: 1350px;
+  margin: 2.5rem auto -6rem; /* negative bottom margin bridges gap into Capabilities section */
   perspective: 1200px;
   overflow: visible !important;
+  z-index: 4; /* sits above the hero::after fade overlay (z-index: 3) */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dashboard-mockup-wrapper:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(16, 185, 129, 0.15);
 }
 
 .dashboard-mockup-wrapper::after {
@@ -693,6 +699,11 @@
 
 /* Responsive collapse */
 @media (max-width: 1024px) {
+  .dashboard-mockup-wrapper {
+    width: 95%;
+    margin-bottom: -3rem; /* reduce negative margin on tablet */
+  }
+
   .mockup-sidebar {
     display: none;
   }
@@ -810,6 +821,11 @@
 }
 
 @media (max-width: 640px) {
+  .dashboard-mockup-wrapper {
+    width: 100%;
+    margin-bottom: -2rem; /* minimal negative margin on phone */
+  }
+
   .mockup-content {
     padding: 1rem;
   }
